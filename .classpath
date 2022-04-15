@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" output="WEB-INF/classes" path="WEB-INF/src">
+		<attributes>
+			<attribute name="optional" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/com.liferay.faces.bridge.api-4.1.0.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/com.liferay.faces.bridge.ext-5.0.4.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/com.liferay.faces.bridge.impl-4.1.3.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/com.liferay.faces.portal-4.0.0 (1).jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/com.liferay.faces.util-3.2.0.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/com.liferay.util.taglib-4.3.4.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/javax.faces-2.2.19.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/log4j-1.2.14.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/util-java-7.0.0-nightly.jar"/>
+	<classpathentry kind="lib" path="dev/lib/org.osgi.service.component.annotations-1.4.0.jar"/>
+	<classpathentry kind="lib" path="dev/lib/portal-kernel.jar"/>
+	<classpathentry kind="lib" path="dev/lib/portlet.jar"/>
+	<classpathentry kind="lib" path="dev/lib/servlet-api.jar"/>
+	<classpathentry kind="output" path="WEB-INF/classes"/>
+</classpath>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" version="3.0">
+    <display-name>ncovid-portlet</display-name>  
+    <context-param>                       
+        <param-name>javax.faces.PROJECT_STAGE</param-name>
+        <param-value>Development</param-value> 
+    </context-param>            
+    <context-param>                      
+        <param-name>org.icefaces.uniqueResourceURLs</param-name>
+        <param-value>false</param-value>  
+    </context-param> 
+    <context-param> 
+        <param-name>org.jboss.jbossfaces.WAR_BUNDLES_JSF_IMPL</param-name>
+        <param-value>true</param-value>
+    </context-param>
+    <context-param>       
+        <param-name>javax.faces.PARTIAL_STATE_SAVING</param-name>
+        <param-value>true</param-value>
+    </context-param>
+    <context-param>
+        <param-name>javax.faces.STATE_SAVING_METHOD</param-name>
+        <param-value>server</param-value>
+    </context-param>
+    <context-param>
+        <param-name>javax.faces.FACELETS_SKIP_COMMENTS</param-name>
+        <param-value>true</param-value>
+    </context-param> 
+    <context-param>
+        <param-name>javax.faces.FACELETS_REFRESH_PERIOD</param-name>
+        <param-value>0</param-value>
+    </context-param>    
+    <filter>                              
+        <filter-name>Invoker Filter - ERROR</filter-name>
+        <filter-class>com.liferay.portal.kernel.servlet.filters.invoker.InvokerFilter</filter-class>
+        <init-param>                  
+            <param-name>dispatcher</param-name>
+            <param-value>ERROR</param-value>
+        </init-param>            
+    </filter>                  
+    <filter>     
+        <filter-name>Invoker Filter - FORWARD</filter-name>
+        <filter-class>com.liferay.portal.kernel.servlet.filters.invoker.InvokerFilter</filter-class>
+        <init-param>
+            <param-name>dispatcher</param-name>
+            <param-value>FORWARD</param-value>
+        </init-param>
+    </filter>  
+    <filter>
+        <filter-name>Invoker Filter - INCLUDE</filter-name>
+        <filter-class>com.liferay.portal.kernel.servlet.filters.invoker.InvokerFilter</filter-class>
+        <init-param>
+            <param-name>dispatcher</param-name>
+            <param-value>INCLUDE</param-value>
+        </init-param>
+    </filter>
+    <filter>
+        <filter-name>Invoker Filter - REQUEST</filter-name>
+        <filter-class>com.liferay.portal.kernel.servlet.filters.invoker.InvokerFilter</filter-class>
+        <init-param>
+            <param-name>dispatcher</param-name>
+            <param-value>REQUEST</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>Invoker Filter - ERROR</filter-name>
+        <url-pattern>/*</url-pattern>
+        <dispatcher>ERROR</dispatcher>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>Invoker Filter - FORWARD</filter-name>
+        <url-pattern>/*</url-pattern>
+        <dispatcher>FORWARD</dispatcher>
+    </filter-mapping>
+    <filter-mapping>  
+        <filter-name>Invoker Filter - INCLUDE</filter-name>
+        <url-pattern>/*</url-pattern>
+        <dispatcher>INCLUDE</dispatcher>
+    </filter-mapping>
+    <filter-mapping>   
+        <filter-name>Invoker Filter - REQUEST</filter-name>
+        <url-pattern>/*</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+    </filter-mapping>
+
+    <listener>
+        <listener-class>com.liferay.portal.kernel.servlet.PluginContextListener</listener-class>
+    </listener>
+    <listener>
+        <listener-class>com.liferay.portal.kernel.servlet.SerializableSessionAttributeListener</listener-class>
+    </listener>
+
+    <servlet>         
+        <servlet-name>Faces Servlet</servlet-name>
+        <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    
+    <servlet-mapping>
+	    <servlet-name>cusc_portlet Servlet</servlet-name>
+	    <url-pattern>/cusc_portlet/*</url-pattern>
+	</servlet-mapping>
+	<servlet>   
+	    <servlet-name>cusc_portlet Servlet</servlet-name>
+	    <servlet-class>com.liferay.portal.kernel.servlet.PortletServlet</servlet-class>
+	    <init-param>
+	        <param-name>portlet-class</param-name>
+	        <param-value>javax.portlet.faces.GenericFacesPortlet</param-value>
+	    </init-param>
+	    <load-on-startup>1</load-on-startup>
+	</servlet>
+</web-app>
